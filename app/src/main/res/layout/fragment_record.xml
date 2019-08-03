@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ProgressBar
+        android:layout_width="@dimen/size_progress_bar"
+        android:layout_height="@dimen/size_progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:background="@drawable/record_progress_bar"
+        android:progressDrawable="@drawable/record_progress_bar"
+        android:id="@+id/progress_bar"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timer"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/size_chrometer"
+        android:layout_alignTop="@+id/progress_bar"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_status"
+        android:text="@string/tv_status_start"
+        android:textSize="@dimen/size_status"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginBottom="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/btnFloating"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnFloating"
+        android:src="@mipmap/ic_mic_white_36dp"
+        app:fab_shadow="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>

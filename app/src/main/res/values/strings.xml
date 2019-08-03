@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Recorder</string>
+    <string name="action_settings">Settings</string>
+    <string name="tv_menu_record">Record</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="tv_status_start">Tab the button to start record</string>
+    <string name="tv_status_stop">Recording</string>
+
+    <!-- Toasts -->
+    <string name="toast_recording_start">Recording started</string>
+    <string name="toast_recording_finish">Recording saved to</string>
+    <string name="toast_file_delete">%1$s successfully deleted</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_options">Options</string>
+    <string name="dialog_title_rename">Rename File</string>
+    <string name="dialog_title_delete">Delete File</string>
+    <string name="dialog_button_choice">Xác Nhận</string>
+    <string name="dialog_button_cancel">Hủy</string>
+</resources>

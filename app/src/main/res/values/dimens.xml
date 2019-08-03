@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="size_title">18dp</dimen>
+    <dimen name="size_button_header">30dp</dimen>
+    <dimen name="width_progress_bar">2.5dp</dimen>
+    <dimen name="size_progress_bar">180dp</dimen>
+    <dimen name="size_chrometer">50sp</dimen>
+    <dimen name="size_status">15dp</dimen>
+    <dimen name="size_title_dialog">15dp</dimen>
+
+</resources>
