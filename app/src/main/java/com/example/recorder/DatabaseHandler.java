@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
+import android.provider.ContactsContract;
 
 import com.example.recorder.data.RecordingItem;
 import com.example.recorder.listeners.OnDatabaseChangedListeners;
@@ -69,6 +70,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.delete(DatabaseItem.TABLE_NAME, "_ID=?", whereArgs);
         if (changedListeners != null){
             changedListeners.onNewDatabaseEntryRemoved();
+        }
+    }
+    public void renameItem(RecordingItem item, String recordName, String filePath){
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DatabaseItem.COLUMN_NAME_RECORDING_NAME, recordName);
+        values.put(DatabaseItem.COLUMN_NAME_RECORDING_FILE_PATH, filePath);
+        database.update(DatabaseItem.TABLE_NAME, values, DatabaseItem._ID+"="+item.getId(), null);
+        if (changedListeners != null){
+            changedListeners.onNewDatabaseEntryRenamed();
         }
     }
 

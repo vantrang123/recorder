@@ -89,9 +89,6 @@ public class RecordingService extends Service {
         try{
             database.addRecording(fileName,filePath,elapseMillis);
         }catch (Exception e){
-
         }
-
-
     }
 }

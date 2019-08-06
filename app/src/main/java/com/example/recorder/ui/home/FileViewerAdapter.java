@@ -80,18 +80,24 @@ public class FileViewerAdapter extends RecyclerView.Adapter<FileViewerAdapter.Re
         return databaseHandler.getCount();
     }
 
-    private RecordingItem getItem(int position) {
+    public RecordingItem getItem(int position) {
         return databaseHandler.getItemAt(position);
     }
 
     @Override
     public void onNewDatabaseEntryAdded() {
-        layoutManager.scrollToPosition(getItemCount()-1);
+        notifyItemInserted(getItemCount() -1 );
+        layoutManager.scrollToPosition(getItemCount() - 1 );
     }
 
     @Override
     public void onNewDatabaseEntryRemoved() {
         notifyItemRemoved(iD);
+    }
+
+    @Override
+    public void onNewDatabaseEntryRenamed(){
+        notifyItemChanged(iD);
     }
 
 

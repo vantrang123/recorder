@@ -1,6 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="size_title">18dp</dimen>
+    <dimen name="size_title">14dp</dimen>
     <dimen name="size_button_header">30dp</dimen>
     <dimen name="width_progress_bar">2.5dp</dimen>
     <dimen name="size_progress_bar">180dp</dimen>

@@ -58,8 +58,8 @@ public class OptionItemDialog extends DialogFragment {
         return view;
     }
 
-    private void setup(View v) {
-        title = (TextView)v.findViewById(R.id.tv_status);
+    public void setup(View v) {
+        title = (TextView)v.findViewById(R.id.tv_title_option);
         rename = (TextView)v.findViewById(R.id.tv_rename);
         delete = (TextView)v.findViewById(R.id.tv_delete);
         cancel = (TextView)v.findViewById(R.id.tv_cancel);
@@ -67,6 +67,14 @@ public class OptionItemDialog extends DialogFragment {
         rename.setText(R.string.dialog_title_rename);
         delete.setText(R.string.dialog_title_delete);
         cancel.setText(R.string.dialog_button_cancel);
+
+        rename.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDialog().cancel();
+                remaneFile(mContext, id);
+            }
+        });
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +90,14 @@ public class OptionItemDialog extends DialogFragment {
         });
 
     }
-    private void deleteFile(Context context, int position) {
+
+    public void remaneFile(Context context, int position) {
+        RemaneDialog remaneDialog = new RemaneDialog(context, position);
+        remaneDialog.show(getFragmentManager(), "RemaneDialog");
+    }
+
+
+    public void deleteFile(Context context, int position) {
         File file = new File(databaseHandler.getItemAt(position).getFilePath());
         file.delete();
         Toast.makeText(context,String.format(context.getString(R.string.toast_file_delete),
