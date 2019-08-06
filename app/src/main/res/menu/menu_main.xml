@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    app:itemTextAppearance="@style/menu_style"
     tools:context="com.example.recorder.ui.home.MainActivity">
     <item
         android:id="@+id/action_settings"

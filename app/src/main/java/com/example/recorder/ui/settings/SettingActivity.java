@@ -23,11 +23,14 @@ public class SettingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setup();
 
-
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.id_settings, new SettingFragment())
+                .commit();
 
     }
 
-    private void setup() {
+    public void setup() {
         tv_title = (TextView)findViewById(R.id.tv_title_settings);
         tv_title.setText(getString(R.string.settings));
         img_back = (ImageView)findViewById(R.id.img_back);

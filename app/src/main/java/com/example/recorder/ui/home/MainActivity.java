@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.example.recorder.R;
 import com.example.recorder.ui.settings.SettingActivity;
@@ -15,6 +16,7 @@ import com.example.recorder.ui.settings.SettingActivity;
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
-        toolbar.setTitle(getString(R.string.tv_menu_record));
+        title = (TextView)findViewById(R.id.titleHome);
+        title.setText(R.string.tv_menu_record);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
     }
 

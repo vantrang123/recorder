@@ -104,5 +104,4 @@ public class RemaneDialog extends DialogFragment {
     }
 
 
-
 }
