@@ -39,6 +39,10 @@ public class FileViewerFragment extends Fragment implements FileViewerAdapter.It
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         viewerAdapter = new FileViewerAdapter(getActivity(), layoutManager,this);
